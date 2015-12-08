@@ -1,15 +1,12 @@
-<p class="lead">
-  All Posts
-  <hr/>
-</p>
+<%= render "shared/title_content", title: "All Posts" %>
 
 <% @posts.each do |post| %>
   <div class="row">
     <div class="span8 well">
-      <% post.categories.each do |category| %>
-        <span class="badge"><%= category.name %></span>
-      <% end %>
-      <h4><%= link_to post.title, post.url%></h4>
+      <%= render post.categories %>
+      <h4><%= link_to post.title, post.url%>
+      (<%= link_to "Edit", edit_post_path(post) %>)
+      </h4>
       <p><%= post.description %></p>
         <p>
           <span class='quiet'>Posted by</span> <%= post.creator.username %>

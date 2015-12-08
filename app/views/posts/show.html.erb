@@ -1,4 +1,11 @@
-<p class="lead">
-  <%= @post.title %>
-  <hr/>
+<p>
+  <%= render @post.categories %>  
 </p>
+
+
+<%= render "shared/title_content", title: @post.title %>
+
+<p>
+  <%= @post.description %>
+</p>
+</br>
