@@ -10,13 +10,19 @@
   </div>
 <% end %>
 
-
-<%= form_for @post do |f| %>
-  <%= f.label :title%>
-  <%= f.text_field :title%>
-  </br>
-  <%= f.label :url%>
-  <%= f.text_field :url%>
-  </br>
-  <%= f.submit "Create post", class: "btn btn-primary" %>
-<% end %>
+<div class="well">
+  <%= form_for @post do |f| %>
+    <div class="control-group">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      </br>
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+      </br>
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 5 %>
+      </br>
+      <%= f.submit (@post.new_record? ? "Create post" : "Update post"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

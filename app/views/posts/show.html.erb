@@ -9,3 +9,9 @@
   <%= @post.description %>
 </p>
 </br>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :body %>
+  </br>
+  <%= f.submit "Create New Comment", class: "btn btn-primary" %>
+<% end %>
