@@ -2,8 +2,7 @@
   <%= render @post.categories %>  
 </p>
 
-
-<%= render "shared/title_content", title: @post.title %>
+<h4>You are viewing:<%= link_to @post.title, fix_url(@post.url) %></h4>
 
 <p>
   <%= @post.description %>
