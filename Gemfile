@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :doc do
   gem 'sdoc', require: false
@@ -27,3 +28,4 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
