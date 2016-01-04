@@ -1,0 +1,5 @@
+<% if @vote.valid? %>
+  $("#comment_<%= @comment.id %>_vote").html("<%= @comment.votes_total %> votes")
+<% else %>
+  alert("You can only vote on comment ine time");
+<% end %>
