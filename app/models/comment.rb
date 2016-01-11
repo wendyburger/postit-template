@@ -1,6 +1,5 @@
 class Comment < ActiveRecord::Base
-  include Voteable
-
+  include VoteableWendyJan
   belongs_to :creator, foreign_key: "user_id", class_name: "User" 
   belongs_to :post
 
