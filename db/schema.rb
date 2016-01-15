@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105054510) do
+ActiveRecord::Schema.define(version: 20160114091658) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", limit: 255
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160105054510) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "slug"
+    t.string   "role"
   end
 
   create_table "votes", force: :cascade do |t|
