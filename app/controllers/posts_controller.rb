@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   before_action :require_creator, only: [:edit, :update]
 
   def index
-    @posts = Post.all.sort_by{|x| x.total_votes}.reverse
+    @posts = Post.limit(Post::PRE_PAGE).offset(params[:offset])
+    @pages = (Post.all.size / Post::PRE_PAGE)
+    @pages += 1 if (Post.all.size % Post::PRE_PAGE) > 0
   end
 
   def show

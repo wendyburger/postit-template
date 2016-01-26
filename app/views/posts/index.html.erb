@@ -3,3 +3,12 @@
 <% @posts.each do |post| %>
   <%= render 'post', post: post %>
 <% end %>
+
+
+<% @pages.times do |n| %>
+  <% if (params[:offset].nil? && n == 0) || params[:offset].to_s == (n * Post::PRE_PAGE).to_s %>
+    <%= "| page #{n+1}" %>
+  <% else %>
+    <%= link_to "| page #{n+1}", posts_path(offset: n * Post::PRE_PAGE) %>
+  <% end %>
+<% end %>
